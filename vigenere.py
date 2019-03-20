@@ -64,14 +64,14 @@ wether you like to read from STDIN or from FILE and wether you like to write to 
 or to FILE. Here I will show you a few examples, how to proper use this programm. When
 you want to decrypt a cipher text you can run the following example:
 
+This will decrypt and write the cipher text to STDOUT and read the plain text from STDIN.
+echo '<intext>' | ./vigenere.py -d -k <key> -o - -i -
+
 This will encrypt and write the cipher text to STDOUT and read the plain text from FILE.
 ./vigenere.py -e -k <key> -o - -i <infile>
 
 This will decrypt and write the cipher text to FILE and read the plain text from FILE.
 ./vigenere.py -d -k <key> -o <outfile> -i <infile>
-
-This will encrypt and write the cipher text to STDOUT and read the plain text from STDIN.
-echo '<intext>' | ./vigenere.py -d -k <key> -o - -i -
                                      ''')
 
     parser.add_argument('-d, --decrypt', dest='decrypt', action='store_true',
